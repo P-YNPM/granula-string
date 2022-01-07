@@ -1,5 +1,6 @@
 {
     "name": "granula-string",
+    "description": "A tiny string util package that aims to be compact",
     "version": "1.0.0",
     "main": "./build/index.js",
     "license": "MIT",
@@ -34,6 +35,7 @@
     },
     "keywords": [
         "string utils",
-        "string utilities"
+        "string utilities",
+        "granula string"
     ]
 }

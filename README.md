@@ -1,4 +1,6 @@
 # Granula String
+- A lovely mini-package to check if string is empty or blank or has sufficient number of characters as you see fit.
+- Functionalities may increase in the future.
 
 ## **_Question_**
 
