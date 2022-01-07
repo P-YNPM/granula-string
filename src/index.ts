@@ -51,4 +51,4 @@ class GranulaString extends String {
     toParentString = () => new String(this.s);
 }
 
-export { GranulaString, isBlank, isEmpty, inRangeOf };
+export { GranulaString, isBlank, isEmpty, inRangeOf, isEqual };
