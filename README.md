@@ -6,13 +6,14 @@
 
 `Why do I build this?`
 
-I found myself need to verify if a string is empty, or blank, or has reached a minimum number of characters very often, thus I build this granula-string and I do not have to write duplicated codes
+I found myself performing the same operation on string across various projects, thus I build this granula-string and I do not have to write duplicated codes
 
 `What are the functionalities?`
 
 1. Check if a string is empty
 2. Check if a string is blank
 3. Check if a string has reach a certain number of characters
+4. Check if both string is equal
 
 Of course the functionalities may increase in the future
 
@@ -36,6 +37,7 @@ import { GranulaString } from 'granula-string'
 const string = GranulaString.createFromString('123')
 const empty = string.isEmpty()
 const blank = string.isBlank()
+const equal = string.isEqual('123')
 const inRangeOf = string.isInRangeOf({
   min: 10,
   max: 100,
@@ -45,13 +47,13 @@ const anotherString: String = string.toParentString() // convert back to String 
 ```
 
 ### FP
-Since there's 3 functionalities available, there's 3 functions that you can import
 ```ts
-import { isEmpty, isBlank, inRangeOf } from 'granula-string'
+import { isEmpty, isBlank, inRangeOf, isEqual } from 'granula-string'
 
 const string = '123'
 const empty = isEmpty(string)
 const blank = isBlank(string)
+const equal = isEqual(string, '123')
 const inRangeOf = isInRangeOf(string, {
   min: 10,
   max: 100,

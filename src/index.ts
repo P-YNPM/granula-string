@@ -3,6 +3,8 @@ const isBlank = (s: string) =>
 
 const isEmpty = (s: string) => s === '';
 
+const isEqual = (s: string, o: string) => s === o;
+
 type InRangeOfOption = Readonly<{
     min: number;
     max?: number;
@@ -40,6 +42,8 @@ class GranulaString extends String {
     isEmpty = () => isEmpty(this.s);
 
     isBlank = () => isBlank(this.s);
+
+    isEqual = (s: string) => isEqual(this.s, s);
 
     inRangeOf = (inRangeOfOption: InRangeOfOption) =>
         inRangeOf(this.s, inRangeOfOption);

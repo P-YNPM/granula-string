@@ -12,8 +12,7 @@
         "test": "jest",
         "add-js-extension-prod": "ts-add-js-extension add --dir=build --keepComments=true --minify=true",
         "add-js-extension": "ts-add-js-extension add --dir=build",
-        "code-cov": "jest --coverage --coverageDirectory='coverage'",
-        "push-publish": "git push && yarn build-prod && npm publish"
+        "code-cov": "jest --coverage --coverageDirectory='coverage'"
     },
     "bugs": "https://github.com/P-YNPM/granula-string/issues",
     "repository": {

@@ -11,6 +11,23 @@ describe('Test createFromString', () => {
     });
 });
 
+describe('Test isEqual', () => {
+    test.each([
+        {
+            s: '123',
+            o: '123',
+            expected: true,
+        },
+        {
+            s: '1234',
+            o: '123',
+            expected: false,
+        },
+    ])('', ({ s, o, expected }) =>
+        expect(GranulaString.createFromString(s).isEqual(o)).toEqual(expected)
+    );
+});
+
 describe('Test isEmpty', () => {
     test('', () => {
         const granula = GranulaString.createFromString('');
