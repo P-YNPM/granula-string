@@ -1,0 +1,39 @@
+{
+    "name": "granula-string",
+    "version": "1.0.0",
+    "main": "./build/index.js",
+    "license": "MIT",
+    "type": "module",
+    "types": "./build",
+    "scripts": {
+        "build": "rm -rf build && tsc && yarn add-js-extension",
+        "build-prod": "rm -rf build && tsc && yarn add-js-extension-prod",
+        "test": "jest",
+        "add-js-extension-prod": "ts-add-js-extension add --dir=build --keepComments=true --minify=true",
+        "add-js-extension": "ts-add-js-extension add --dir=build",
+        "code-cov": "jest --coverage --coverageDirectory='coverage'",
+        "push-publish": "git push && yarn build-prod && npm publish"
+    },
+    "bugs": "https://github.com/P-YNPM/granula-string/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/P-YNPM/granula-string"
+    },
+    "files": [
+        "build"
+    ],
+    "devDependencies": {
+        "@babel/preset-env": "^7.15.8",
+        "@babel/preset-typescript": "^7.15.0",
+        "@types/jest": "^27.0.2",
+        "@types/node": "^16.11.10",
+        "jest": "^27.3.1",
+        "ts-add-js-extension": "^0.0.5",
+        "ts-jest": "^27.0.7",
+        "typescript": "^4.4.4"
+    },
+    "keywords": [
+        "string utils",
+        "string utilities"
+    ]
+}
