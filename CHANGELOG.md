@@ -1,3 +1,7 @@
+## 1.0.5 (12 Jan 2022)
+
+* Fixed build file bugs, removed unnecessary comments
+
 ## 1.0.4 (12 Jan 2022)
 
 * Added check for alphabet, int and float (+ & -), white space

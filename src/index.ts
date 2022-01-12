@@ -31,8 +31,6 @@ const inRangeOf = (
     return s.length >= min && s.length <= vMax;
 };
 
-// new function
-
 const isPositiveFloat = (s: string) => /^[+]?\d+(\.\d+)$/.test(s);
 
 const isNegativeFloat = (s: string) => /^-\d+(\.\d+)?$/.test(s);
@@ -77,8 +75,6 @@ class GranulaString extends String {
 
     inRangeOf = (inRangeOfOption: InRangeOfOption) =>
         inRangeOf(this.s, inRangeOfOption);
-
-    // new function
 
     isPositiveFloat = () => isPositiveFloat(this.s);
 
