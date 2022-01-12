@@ -1,5 +1,5 @@
 # Granula String
-- A lovely mini-package to check if string is empty or blank or has sufficient number of characters as you see fit.
+- A lovely mini string util package.
 - Functionalities may increase in the future.
 
 ## **_Question_**
@@ -10,10 +10,11 @@ I found myself performing the same operation on string across various projects, 
 
 `What are the functionalities?`
 
-1. Check if a string is empty
-2. Check if a string is blank
+1. Check if a string is empty/blank/white space/alphabet/int(positive & negative)/float(positive & negative)
+2. Reverse string, split string into char array
 3. Check if a string has reach a certain number of characters
 4. Check if both string is equal
+... and many more!
 
 Of course the functionalities may increase in the future
 
@@ -29,7 +30,9 @@ and
 
 ### OOP
 There's a class named as GranulaString that extends String
+
 I chose not to use Monkey Patch approach in fear of breaking others code,
+
 Refer: https://www.audero.it/blog/2016/12/05/monkey-patching-javascript/
 ```ts
 import { GranulaString } from 'granula-string'
@@ -68,8 +71,10 @@ Why not? Feel free to raise an issue if you have a question, an enhancement, or 
 `How can I contribute?`
 
 Here you are. If you have read this far, what more can I say?
+
 I am glad that someone actually took their time to read this mini-package of mine
-Here are a few things I would like to know about contribution
+
+Here are a few things you should take note of for contribution
 
     Use TypeScript
     Write Test Code

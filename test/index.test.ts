@@ -28,19 +28,173 @@ describe('Test isEqual', () => {
     );
 });
 
+describe('Test Int', () => {
+    test.each([
+        {
+            s: '123',
+            n: false,
+            p: true,
+            w: true,
+        },
+        {
+            s: '-1234',
+            n: true,
+            p: false,
+            w: true,
+        },
+        {
+            s: '3.142',
+            n: false,
+            p: false,
+            w: false,
+        },
+        {
+            s: 'asd',
+            n: false,
+            p: false,
+            w: false,
+        },
+    ])('', ({ s, n, p, w }) => {
+        const granula = GranulaString.createFromString(s);
+        expect(granula.isPositiveInt()).toEqual(p);
+        expect(granula.isNegativeInt()).toEqual(n);
+        expect(granula.isInt()).toEqual(w);
+    });
+});
+
+describe('Test Float', () => {
+    test.each([
+        {
+            s: '3.142',
+            n: false,
+            p: true,
+            w: true,
+        },
+        {
+            s: '-3.142',
+            n: true,
+            p: false,
+            w: true,
+        },
+        {
+            s: '123',
+            n: false,
+            p: false,
+            w: false,
+        },
+        {
+            s: 'asd',
+            n: false,
+            p: false,
+            w: false,
+        },
+    ])('', ({ s, n, p, w }) => {
+        const granula = GranulaString.createFromString(s);
+        expect(granula.isPositiveFloat()).toEqual(p);
+        expect(granula.isNegativeFloat()).toEqual(n);
+        expect(granula.isFloat()).toEqual(w);
+    });
+});
+
+describe('Test isAlphabet', () => {
+    test.each([
+        {
+            s: 'asd',
+            e: true,
+        },
+        {
+            s: '123',
+            e: false,
+        },
+        {
+            s: '\n',
+            e: false,
+        },
+    ])('', ({ s, e }) =>
+        expect(GranulaString.createFromString(s).isAlphabet()).toEqual(e)
+    );
+});
+
+describe('Test reverse', () => {
+    test.each([
+        {
+            s: 'Hello I am Granula',
+            e: 'alunarG ma I olleH',
+        },
+        {
+            s: '123',
+            e: '321',
+        },
+    ])('', ({ s, e }) =>
+        expect(GranulaString.createFromString(s).reverse()).toEqual(e)
+    );
+});
+
+describe('Test toArray', () => {
+    test.each([
+        {
+            s: 'Hello I am Granula',
+            e: 18,
+        },
+        {
+            s: '',
+            e: 0,
+        },
+    ])('', ({ s, e }) =>
+        expect(GranulaString.createFromString(s).toArray().length).toEqual(e)
+    );
+});
+
+describe('Test unCapitalize', () => {
+    test.each([
+        {
+            s: 'iASASAS ASAS AS',
+            u: 'iASASAS ASAS AS',
+        },
+        {
+            s: 'IASASAS',
+            u: 'iASASAS',
+        },
+    ])('', ({ s, u }) =>
+        expect(GranulaString.createFromString(s).unCapitalize()).toEqual(u)
+    );
+});
+
+describe('Test capitalize', () => {
+    test.each([
+        {
+            s: 'iabcdasd 123 !@',
+            c: 'Iabcdasd 123 !@',
+        },
+        {
+            s: 'iASASAS',
+            c: 'IASASAS',
+        },
+    ])('', ({ s, c }) =>
+        expect(GranulaString.createFromString(s).capitalize()).toEqual(c)
+    );
+});
+
 describe('Test isEmpty', () => {
     test('', () => {
         const granula = GranulaString.createFromString('');
         expect(granula.isEmpty()).toEqual(true);
         expect(granula.isBlank()).toEqual(true);
+        expect(granula.isWhiteSpace()).toEqual(false);
     });
 });
 
-describe('Test isBlank', () => {
+describe('Test isBlank and isWhiteSpace', () => {
     test('', () => {
         const granula = GranulaString.createFromString('          ');
         expect(granula.isEmpty()).toEqual(false);
+        expect(granula.isWhiteSpace()).toEqual(true);
         expect(granula.isBlank()).toEqual(true);
+
+        const granula2 = GranulaString.createFromString('\n\n\t');
+        expect(granula2.isEmpty()).toEqual(false);
+        expect(granula2.isWhiteSpace()).toEqual(true);
+        expect(granula2.isBlank()).toEqual(false);
     });
 });
 
