@@ -1,4 +1,4 @@
-## 1.0.6 (12 Jan 2022)
+## 1.0.6 (19 July 2022)
 
 -   Added support for CommonJs & Emit declaration in separate folder
 

@@ -1,7 +1,7 @@
 {
     "name": "granula-string",
     "description": "A tiny string util package that aims to be compact",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "main": "build/cjs/index.js",
     "module": "build/mjs/index.js",
     "types": "build/dts/index.d.ts",
